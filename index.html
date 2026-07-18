@@ -239,6 +239,20 @@
   }
   .focus-strip .fs-label{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green);white-space:nowrap}
 
+  .fs-intro{font-size:.92rem;color:var(--ink-soft);margin:8px 0 12px}
+  .disclaimer{margin-top:26px;font-size:.85rem;color:var(--ink-faint);font-style:italic;max-width:780px}
+
+  /* ---------- Thought leadership ---------- */
+  .tl-row{display:grid;grid-template-columns:220px 1fr;gap:36px;margin-top:40px;align-items:start}
+  .tl-stat{
+    background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+    padding:28px;text-align:center;
+  }
+  .tl-stat b{display:block;font-size:2.2rem;font-weight:800;letter-spacing:-.02em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .tl-stat span{font-size:.86rem;color:var(--ink-faint)}
+  .tl-areas h3{font-size:.95rem;margin-bottom:14px}
+  .tl-btn{margin-top:20px}
+
   /* ---------- Scroll progress + back to top ---------- */
   #progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--grad);z-index:60}
   #toTop{
@@ -272,7 +286,7 @@
   @media(max-width:900px){
     .hero-grid{grid-template-columns:1fr;gap:44px}
     .portrait{justify-self:start;max-width:300px}
-    .about-grid,.cred-grid{grid-template-columns:1fr}
+    .about-grid,.cred-grid,.tl-row{grid-template-columns:1fr}
     .ai-grid{grid-template-columns:1fr 1fr}
   }
   @media(max-width:640px){
@@ -303,6 +317,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#expertise">Expertise</a></li>
         <li><a href="#ai">Enterprise AI</a></li>
+        <li><a href="#vision">AI Vision</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#credentials">Credentials</a></li>
@@ -524,17 +539,97 @@
     </div>
 
     <div class="focus-strip reveal">
-      <span class="fs-label">Currently exploring</span>
-      <span class="chip">SAP Joule Studio</span>
-      <span class="chip">Agentic AI</span>
-      <span class="chip">SAP Business Data Cloud</span>
-      <span class="chip">SAP Build</span>
-      <span class="chip">Multi-agent HR automation</span>
+      <div>
+        <span class="fs-label">Currently exploring</span>
+        <p class="fs-intro">As enterprise AI continues to evolve, I am actively expanding my expertise in:</p>
+        <div class="chip-row">
+          <span class="chip">SAP Business AI &amp; Joule</span>
+          <span class="chip">SAP Joule Studio</span>
+          <span class="chip">SAP Business Data Cloud</span>
+          <span class="chip">SAP Build</span>
+          <span class="chip">Agentic AI for Enterprise HR</span>
+          <span class="chip">AI Governance &amp; Responsible AI</span>
+          <span class="chip">Multi-Agent Enterprise Systems</span>
+          <span class="chip">HR Digital Transformation Strategy</span>
+          <span class="chip">Enterprise Architecture for Intelligent Applications</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="alt" id="projects">
+<section class="alt" id="vision">
+  <div class="wrap">
+    <div class="kicker">Enterprise HR AI Vision</div>
+    <h2>Building the future of intelligent HR.</h2>
+    <p class="lede">I believe the next generation of HR platforms will combine SAP SuccessFactors, SAP Business AI, SAP BTP, and trusted enterprise data to deliver intelligent, human-centred experiences. The concepts below are architectural solution patterns and strategic ideas that demonstrate my approach to enterprise HR transformation — not client implementations or proprietary solutions.</p>
+    <div class="cards">
+      <div class="card reveal">
+        <h3>Intelligent Employee Experience</h3>
+        <p>Conversational experiences that help employees navigate HR processes quickly while keeping humans in control of important decisions.</p>
+        <ul>
+          <li>HR policy guidance</li>
+          <li>Leave and benefits assistance</li>
+          <li>Employee self-service navigation</li>
+          <li>Case routing, escalation &amp; multilingual support</li>
+        </ul>
+      </div>
+      <div class="card reveal">
+        <h3>Intelligent HR Operations</h3>
+        <p>Enabling HR teams to identify operational risks and data-quality issues before they impact business processes.</p>
+        <ul>
+          <li>Workflow monitoring</li>
+          <li>Data quality insights</li>
+          <li>Process exception identification</li>
+          <li>Guided operational recommendations</li>
+        </ul>
+      </div>
+      <div class="card reveal">
+        <h3>Intelligent Payroll Readiness</h3>
+        <p>Improving payroll quality by validating HR and payroll information before payroll execution.</p>
+        <ul>
+          <li>Payroll data validation</li>
+          <li>Missing information detection</li>
+          <li>Time and absence readiness</li>
+          <li>Payroll exception summaries</li>
+        </ul>
+      </div>
+      <div class="card reveal">
+        <h3>Intelligent Talent Experience</h3>
+        <p>Supporting employees and managers with AI-assisted career growth and workforce planning.</p>
+        <ul>
+          <li>Skills insights</li>
+          <li>Learning recommendations</li>
+          <li>Internal mobility guidance</li>
+          <li>Career development support</li>
+        </ul>
+      </div>
+      <div class="card reveal">
+        <h3>Intelligent Workforce Insights</h3>
+        <p>Transforming workforce data into meaningful business insights that support better decision-making.</p>
+        <ul>
+          <li>Workforce trends &amp; organisation insights</li>
+          <li>Attrition indicators</li>
+          <li>Executive dashboards</li>
+          <li>Decision-support recommendations</li>
+        </ul>
+      </div>
+      <div class="card reveal">
+        <h3>Enterprise Architecture Principles</h3>
+        <p>Every solution pattern above is designed around the same foundations:</p>
+        <ul>
+          <li>Business value before technology</li>
+          <li>Human oversight for critical HR decisions</li>
+          <li>Responsible, explainable AI &amp; governed enterprise data</li>
+          <li>Clean Core, BTP extensibility &amp; enterprise scalability</li>
+        </ul>
+      </div>
+    </div>
+    <p class="disclaimer">The concepts presented here reflect my professional perspective on enterprise HR architecture and future AI-enabled business capabilities. They are intended to demonstrate architectural thinking and should not be interpreted as client deliverables or proprietary implementations.</p>
+  </div>
+</section>
+
+<section id="projects">
   <div class="wrap">
     <div class="kicker">Featured Projects</div>
     <h2>Selected engagements</h2>
@@ -572,7 +667,7 @@
   </div>
 </section>
 
-<section id="experience">
+<section class="alt" id="experience">
   <div class="wrap">
     <div class="kicker">Experience</div>
     <h2>A continuous consulting journey</h2>
@@ -607,6 +702,30 @@
         <h3>Earlier career — HR Operations, SAP HCM &amp; Payroll</h3>
         <div class="org">Deloitte Support Services India · Aegis Ltd. · Mahindra Finance</div>
         <p>Built strong foundations in HR operations, payroll, compensation, reporting, and regional HR service delivery — the practical business grounding behind later advisory and architecture work.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="thought-leadership">
+  <div class="wrap">
+    <div class="kicker">Thought Leadership</div>
+    <h2>Sharing knowledge with the global SAP community.</h2>
+    <p class="lede">I enjoy sharing practical knowledge with the global SAP community and helping professionals navigate HR technology and enterprise AI. Through visual learning content, technical articles, and community engagement, I aim to simplify complex topics into practical insights for consultants, customers, and future architects.</p>
+    <div class="tl-row reveal">
+      <div class="tl-stat"><b>13K+</b><span>LinkedIn followers</span></div>
+      <div class="tl-areas">
+        <h3>Areas I regularly contribute to</h3>
+        <div class="chip-row">
+          <span class="chip">SAP SuccessFactors Employee Central</span>
+          <span class="chip">HR Solution Architecture</span>
+          <span class="chip">Enterprise HR Transformation</span>
+          <span class="chip gold">SAP Business AI &amp; Joule</span>
+          <span class="chip gold">Responsible AI in HR</span>
+          <span class="chip gold">Agentic AI Concepts</span>
+          <span class="chip">Career Development for SAP Professionals</span>
+        </div>
+        <a class="btn btn-ghost tl-btn" href="https://www.linkedin.com/in/sharmasant" target="_blank" rel="noopener">Follow on LinkedIn</a>
       </div>
     </div>
   </div>

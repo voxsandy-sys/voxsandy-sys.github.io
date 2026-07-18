@@ -239,6 +239,22 @@
   }
   .focus-strip .fs-label{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green);white-space:nowrap}
 
+  /* ---------- Principles + help ---------- */
+  .prin-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:40px}
+  .prin{
+    display:flex;align-items:flex-start;gap:16px;background:var(--panel);
+    border:1px solid var(--line);border-radius:12px;padding:18px 22px;
+  }
+  .prin:last-child{grid-column:1/-1}
+  .prin b{font-size:1.15rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .prin span{font-size:.96rem;color:var(--ink-soft);padding-top:2px}
+  .help-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:36px;max-width:920px}
+  .help-item{
+    background:var(--panel);border:1px solid var(--line);border-radius:10px;
+    padding:14px 18px 14px 42px;font-size:.95rem;color:var(--ink-soft);position:relative;
+  }
+  .help-item::before{content:"✓";position:absolute;left:18px;color:var(--green);font-weight:700}
+
   .fs-intro{font-size:.92rem;color:var(--ink-soft);margin:8px 0 12px}
   .disclaimer{margin-top:26px;font-size:.85rem;color:var(--ink-faint);font-style:italic;max-width:780px}
 
@@ -297,7 +313,7 @@
   @media(max-width:900px){
     .hero-grid{grid-template-columns:1fr;gap:44px}
     .portrait{justify-self:start;max-width:300px}
-    .about-grid,.cred-grid,.tl-row{grid-template-columns:1fr}
+    .about-grid,.cred-grid,.tl-row,.prin-grid,.help-grid{grid-template-columns:1fr}
     .ai-grid{grid-template-columns:1fr 1fr}
   }
   @media(max-width:640px){
@@ -656,18 +672,61 @@
   </div>
 </section>
 
-<section id="projects">
+<section id="principles">
   <div class="wrap">
-    <div class="kicker">Featured Projects</div>
-    <h2>Selected engagements</h2>
-    <p class="lede">Representative programs from my consulting career — anonymized for client confidentiality.</p>
+    <div class="kicker">Architecture Principles</div>
+    <h2>How I make architecture decisions.</h2>
+    <p class="lede">Every engagement is different, but the principles behind my design decisions stay the same.</p>
+    <div class="prin-grid">
+      <div class="prin reveal"><b>01</b><span>Business outcomes before technology decisions.</span></div>
+      <div class="prin reveal"><b>02</b><span>Keep the SAP core clean and extensible.</span></div>
+      <div class="prin reveal"><b>03</b><span>Design for global scalability with local compliance.</span></div>
+      <div class="prin reveal"><b>04</b><span>Use AI to augment people, not replace accountability.</span></div>
+      <div class="prin reveal"><b>05</b><span>Prioritise security, governance and explainability.</span></div>
+      <div class="prin reveal"><b>06</b><span>Build solutions that are maintainable beyond go-live.</span></div>
+      <div class="prin reveal"><b>07</b><span>Measure success through business adoption, not only technical delivery.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="projects">
+  <div class="wrap">
+    <div class="kicker">Selected Engagements</div>
+    <h2>Programs I've led and shaped</h2>
+    <p class="lede">Representative engagements from my consulting career — anonymized for client confidentiality.</p>
     <div class="cards">
       <div class="card reveal">
-        <div class="proj-role">Lead Solution Architect</div>
-        <h3>Global Employee Central Template Transformation</h3>
-        <p>Designed the global template and target-state architecture for a multi-country Employee Central program: fit-gap workshops, governance and design authority, and a phased rollout roadmap across regions.</p>
-        <div class="chip-row"><span class="chip">Employee Central</span><span class="chip">Global template</span><span class="chip">Governance</span></div>
-        <div class="proj-outcome"><b>Outcome:</b> harmonized HR core processes on one scalable template across countries.</div>
+        <div class="proj-role">Lead SAP SuccessFactors Solution Architect</div>
+        <h3>Global Retail HR Transformation</h3>
+        <p>Global Employee Central template program for a multinational retail organisation — target-state design, governance, and phased multi-country rollout.</p>
+        <ul>
+          <li>Multi-country deployment</li>
+          <li>Global template standardisation</li>
+          <li>Payroll integration strategy</li>
+          <li>Position Management &amp; HR governance</li>
+        </ul>
+      </div>
+      <div class="card reveal">
+        <div class="proj-role">Solution Architect</div>
+        <h3>Enterprise HR Service Transformation</h3>
+        <p>Modern HR service delivery architecture around the digital HR core — designed to be AI-ready from day one.</p>
+        <ul>
+          <li>SAP Service Cloud &amp; AskHR</li>
+          <li>Employee Case Management</li>
+          <li>Knowledge Management</li>
+          <li>AI-ready service architecture</li>
+        </ul>
+      </div>
+      <div class="card reveal">
+        <div class="proj-role">Solution Architect</div>
+        <h3>Workforce &amp; Time Transformation</h3>
+        <p>Time and workforce management modernisation with payroll readiness and compliance at the centre.</p>
+        <ul>
+          <li>SuccessFactors Time Off &amp; Time Tracking</li>
+          <li>ATOSS integration</li>
+          <li>Payroll readiness</li>
+          <li>Compliance</li>
+        </ul>
       </div>
       <div class="card reveal">
         <div class="proj-role">Solution Architect</div>
@@ -694,7 +753,7 @@
   </div>
 </section>
 
-<section class="alt" id="experience">
+<section id="experience">
   <div class="wrap">
     <div class="kicker">Experience</div>
     <h2>A continuous consulting journey</h2>
@@ -734,7 +793,7 @@
   </div>
 </section>
 
-<section id="thought-leadership">
+<section class="alt" id="thought-leadership">
   <div class="wrap">
     <div class="kicker">Thought Leadership</div>
     <h2>Sharing knowledge with the global SAP community.</h2>
@@ -758,7 +817,7 @@
   </div>
 </section>
 
-<section class="alt" id="credentials">
+<section id="credentials">
   <div class="wrap">
     <div class="kicker">Credentials</div>
     <h2>Certifications &amp; education</h2>
@@ -784,6 +843,23 @@
         </div>
         <div class="cred-note">Languages: English (fluent) · Hindi (fluent) · German (basic)</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="help">
+  <div class="wrap">
+    <div class="kicker">How I Can Help</div>
+    <h2>What I can help with.</h2>
+    <div class="help-grid">
+      <div class="help-item reveal">SAP SuccessFactors Solution Architecture</div>
+      <div class="help-item reveal">Global HR Transformation Programmes</div>
+      <div class="help-item reveal">SAP Business AI &amp; Joule Strategy</div>
+      <div class="help-item reveal">Enterprise HR Architecture</div>
+      <div class="help-item reveal">Employee Central &amp; Payroll Transformation</div>
+      <div class="help-item reveal">HR Process Optimisation</div>
+      <div class="help-item reveal">AI Adoption &amp; Governance</div>
+      <div class="help-item reveal">Technical Leadership &amp; Delivery Assurance</div>
     </div>
   </div>
 </section>

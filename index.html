@@ -15,8 +15,9 @@
     --ink:#eaf1fb;
     --ink-soft:#a7b6cc;
     --ink-faint:#6d7f99;
-    --blue:#3d8bfd;
+    --blue:#2f9dff;
     --cyan:#38d6f5;
+    --green:#00c48c;
     --blue-deep:#0e5fd8;
     --amber:#f0b453;
     --grad:linear-gradient(92deg,var(--blue) 0%,var(--cyan) 100%);
@@ -207,6 +208,40 @@
   .foot,.foot a{font-size:.85rem;color:var(--ink-faint);text-decoration:none}
   .foot a:hover{color:var(--cyan)}
 
+  /* ---------- Hero keyword chips ---------- */
+  .hero-keys{margin-top:20px;display:flex;flex-wrap:wrap;gap:9px;max-width:620px}
+  .key{
+    font-size:.84rem;font-weight:600;padding:5px 13px;border-radius:999px;
+    background:rgba(0,196,140,.1);border:1px solid rgba(0,196,140,.35);color:#7de8c3;
+  }
+
+  /* ---------- Enterprise AI tiles ---------- */
+  .ai-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+  .ai-tile{
+    background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px 22px;transition:border-color .25s,transform .25s;
+  }
+  .ai-tile:hover{border-color:rgba(0,196,140,.5);transform:translateY(-2px)}
+  .ai-tile h3{font-size:.98rem;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+  .ai-tile h3::before{content:"◆";color:var(--green);font-size:.7rem}
+  .ai-tile p{font-size:.87rem;color:var(--ink-soft)}
+
+  /* ---------- Project cards ---------- */
+  .proj-role{font-size:.76rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan);margin-bottom:8px}
+  .card .chip-row{margin-top:14px}
+  .proj-outcome{margin-top:14px;padding-top:12px;border-top:1px dashed var(--line);font-size:.88rem;color:var(--ink-soft)}
+  .proj-outcome b{color:var(--green)}
+
+  /* ---------- Certification badges ---------- */
+  .badges{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .badge-c{
+    display:flex;align-items:center;gap:10px;background:rgba(47,157,255,.07);
+    border:1px solid var(--line);border-radius:10px;padding:11px 13px;
+    font-size:.85rem;color:var(--ink-soft);line-height:1.4;
+  }
+  .badge-c .m{font-size:1.15rem;line-height:1}
+  .badge-c b{color:var(--ink);display:block;font-size:.86rem}
+
   .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
   .reveal.visible{opacity:1;transform:none}
 
@@ -214,6 +249,7 @@
     .hero-grid{grid-template-columns:1fr;gap:44px}
     .portrait{justify-self:start;max-width:300px}
     .about-grid,.cred-grid{grid-template-columns:1fr}
+    .ai-grid{grid-template-columns:1fr 1fr}
   }
   @media(max-width:640px){
     nav ul{
@@ -223,7 +259,7 @@
     nav ul.open{display:flex}
     nav ul li{padding:10px 0}
     .menu-btn{display:block}
-    .cards{grid-template-columns:1fr}
+    .cards,.ai-grid,.badges{grid-template-columns:1fr}
     .hero{padding:56px 0 48px}
     section{padding:60px 0}
     .contact-box{padding:44px 24px}
@@ -241,6 +277,8 @@
       <ul id="menu">
         <li><a href="#about">About</a></li>
         <li><a href="#expertise">Expertise</a></li>
+        <li><a href="#ai">Enterprise AI</a></li>
+        <li><a href="#projects">Projects</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#credentials">Credentials</a></li>
         <li><a class="nav-cta" href="#contact">Get in touch</a></li>
@@ -253,17 +291,25 @@
   <div class="wrap hero-grid">
     <div>
       <span class="hero-kicker"><span class="dot"></span>SAP SuccessFactors Certified Solution Architect</span>
-      <h1>Bridging business, technology &amp; people to <em>transform HR for the future</em>.</h1>
-      <div class="hero-sub">Global HR Transformation <span class="sep">|</span> Employee Central &amp; Payroll <span class="sep">|</span> AI-Enabled HR Digitalization</div>
-      <p class="intro">I'm Santosh Sharma, an SAP SuccessFactors Solution Architect and strategic transformation advisor based in Frankfurt, Germany. I help global organizations turn business priorities into scalable HR solutions — from target-state design to go-live and beyond.</p>
+      <h1>Helping global organizations modernize HR with <em>SAP SuccessFactors, AI &amp; enterprise architecture</em>.</h1>
+      <p class="intro">I'm Santosh Sharma, an SAP SuccessFactors Solution Architect and strategic transformation advisor in Frankfurt, Germany — bridging business, technology &amp; people to transform HR for the future.</p>
+      <div class="hero-keys">
+        <span class="key">✔ Global HR Transformation</span>
+        <span class="key">✔ SAP SuccessFactors</span>
+        <span class="key">✔ Payroll Modernization</span>
+        <span class="key">✔ Enterprise AI</span>
+        <span class="key">✔ Solution Architecture</span>
+        <span class="key">✔ SAP Business AI</span>
+      </div>
       <div class="hero-actions">
         <a class="btn btn-primary" href="#contact">Start a conversation</a>
-        <a class="btn btn-ghost" href="#experience">View experience</a>
+        <a class="btn btn-ghost" href="Santosh_Sharma_Resume.pdf" download>Download resume</a>
       </div>
       <div class="hero-stats">
         <div class="stat"><b>15+</b><span>years in HR &amp; SAP</span></div>
-        <div class="stat"><b>5</b><span>SAP SuccessFactors certifications</span></div>
-        <div class="stat"><b>Global</b><span>multi-country rollouts</span></div>
+        <div class="stat"><b>9+</b><span>years SAP SuccessFactors</span></div>
+        <div class="stat"><b>20+</b><span>countries delivered</span></div>
+        <div class="stat"><b>13K+</b><span>LinkedIn followers</span></div>
       </div>
     </div>
     <div class="portrait reveal">
@@ -358,6 +404,78 @@
   </div>
 </section>
 
+<section id="ai">
+  <div class="wrap">
+    <div class="kicker">Enterprise AI</div>
+    <h2>AI for the HR function — practical, governed, enterprise-ready.</h2>
+    <p class="lede">My current focus: helping HR organizations move from AI curiosity to AI capability on the SAP stack — grounded in the Leadership with AI program at ISB and SAP Business AI records of achievement.</p>
+    <div class="ai-grid">
+      <div class="ai-tile reveal">
+        <h3>SAP Business AI &amp; Joule</h3>
+        <p>Bringing AI assistance into everyday HR processes — where embedded AI genuinely reduces effort, and where it doesn't.</p>
+      </div>
+      <div class="ai-tile reveal">
+        <h3>SAP BTP &amp; SAP Build</h3>
+        <p>Extension architecture on the Business Technology Platform: clean-core extensions, integration, and low-code automation around the HR core.</p>
+      </div>
+      <div class="ai-tile reveal">
+        <h3>Agentic HR Automation</h3>
+        <p>Exploring multi-agent patterns for HR service delivery — automating request handling, data validation, and employee workflows with humans in control.</p>
+      </div>
+      <div class="ai-tile reveal">
+        <h3>People Analytics &amp; AI Insights</h3>
+        <p>Certified in SuccessFactors People Analytics — turning workforce data into decisions leadership can act on.</p>
+      </div>
+      <div class="ai-tile reveal">
+        <h3>Responsible AI &amp; Governance</h3>
+        <p>Bias-aware, compliant, transparent adoption — AI in HR touches people's careers, so governance is designed in, not bolted on.</p>
+      </div>
+      <div class="ai-tile reveal">
+        <h3>Change Readiness &amp; Value</h3>
+        <p>AI only pays off when people adopt it. I pair every AI roadmap with change readiness and value realization tracking.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="projects">
+  <div class="wrap">
+    <div class="kicker">Featured Projects</div>
+    <h2>Selected engagements</h2>
+    <p class="lede">Representative programs from my consulting career — anonymized for client confidentiality.</p>
+    <div class="cards">
+      <div class="card reveal">
+        <div class="proj-role">Lead Solution Architect</div>
+        <h3>Global Employee Central Template Transformation</h3>
+        <p>Designed the global template and target-state architecture for a multi-country Employee Central program: fit-gap workshops, governance and design authority, and a phased rollout roadmap across regions.</p>
+        <div class="chip-row"><span class="chip">Employee Central</span><span class="chip">Global template</span><span class="chip">Governance</span></div>
+        <div class="proj-outcome"><b>Outcome:</b> harmonized HR core processes on one scalable template across countries.</div>
+      </div>
+      <div class="card reveal">
+        <div class="proj-role">Solution Architect</div>
+        <h3>Payroll Transformation &amp; Third-Party Connectivity</h3>
+        <p>Architected the connection between Employee Central, EC Payroll, and third-party payroll providers — integration design across SAP Integration Center, OData APIs, and CPI, with testing and deployment leadership.</p>
+        <div class="chip-row"><span class="chip">EC Payroll</span><span class="chip">Integration</span><span class="chip">CPI / OData</span></div>
+        <div class="proj-outcome"><b>Outcome:</b> a compliant, connected payroll landscape with less manual intervention.</div>
+      </div>
+      <div class="card reveal">
+        <div class="proj-role">Lead Consultant</div>
+        <h3>Multi-Country Implementation &amp; Data Migration</h3>
+        <p>Delivered end-to-end Employee Central implementations from blueprint through go-live: data migration with quality validation across SuccessFactors modules, payroll systems, and external applications, plus user enablement and hypercare.</p>
+        <div class="chip-row"><span class="chip">Implementation</span><span class="chip">Data migration</span><span class="chip">Enablement</span></div>
+        <div class="proj-outcome"><b>Outcome:</b> clean, validated workforce data and adopted self-service processes at go-live.</div>
+      </div>
+      <div class="card reveal">
+        <div class="proj-role">Transformation Advisor</div>
+        <h3>AI-Enabled HR Modernization Advisory</h3>
+        <p>Advising HR organizations on where SAP Business AI creates real value: use-case discovery, cloud modernization and BTP alignment, change readiness, and long-term value realization.</p>
+        <div class="chip-row"><span class="chip gold">SAP Business AI</span><span class="chip gold">Cloud &amp; BTP</span><span class="chip gold">Adoption</span></div>
+        <div class="proj-outcome"><b>Outcome:</b> pragmatic AI roadmaps with governance built in from day one.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="experience">
   <div class="wrap">
     <div class="kicker">Experience</div>
@@ -405,22 +523,23 @@
     <div class="cred-grid">
       <div class="cred-card reveal">
         <h3><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="5.5"/><path d="M8.5 13.5L7 21l5-2.6L17 21l-1.5-7.5"/></svg>SAP Certifications</h3>
-        <ul>
-          <li>SAP Certified Application Professional — SuccessFactors Employee Central Core</li>
-          <li>SAP Certified Application Associate — SuccessFactors Employee Central</li>
-          <li>SAP Certified Application Associate — SuccessFactors Employee Central Payroll</li>
-          <li>SAP Certified Application Associate — SuccessFactors People Analytics</li>
-          <li>SAP Certified Application Associate — SAP SuccessFactors Time Management</li>
-        </ul>
-        <div class="cred-note">Records of Achievement: Exploring the SAP Business AI Portfolio · Positioning SAP Autonomous Enterprise</div>
+        <div class="badges">
+          <div class="badge-c"><span class="m">🏅</span><span><b>Employee Central Core</b>Application Professional</span></div>
+          <div class="badge-c"><span class="m">🏅</span><span><b>Employee Central</b>Application Associate</span></div>
+          <div class="badge-c"><span class="m">🏅</span><span><b>EC Payroll</b>Application Associate</span></div>
+          <div class="badge-c"><span class="m">🏅</span><span><b>People Analytics</b>Application Associate</span></div>
+          <div class="badge-c"><span class="m">🏅</span><span><b>Time Management</b>Application Associate</span></div>
+          <div class="badge-c"><span class="m">🤖</span><span><b>SAP Business AI</b>Records of Achievement ×2</span></div>
+        </div>
+        <div class="cred-note">SAP Business AI Records of Achievement: Exploring the SAP Business AI Portfolio · Positioning SAP Autonomous Enterprise</div>
       </div>
       <div class="cred-card reveal">
         <h3><svg viewBox="0 0 24 24"><path d="M12 4L2 9l10 5 10-5-10-5zM6 11.5V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-4.5"/></svg>Education &amp; Programs</h3>
-        <ul>
-          <li>Leadership with AI Program — Indian School of Business (ISB)</li>
-          <li>MBA, Human Resources Management — Alagappa University, India</li>
-          <li>B.Sc. Computer Science — Barkatullah University, India</li>
-        </ul>
+        <div class="badges" style="grid-template-columns:1fr">
+          <div class="badge-c"><span class="m">🎓</span><span><b>Leadership with AI</b>Indian School of Business (ISB)</span></div>
+          <div class="badge-c"><span class="m">🎓</span><span><b>MBA, Human Resources Management</b>Alagappa University, India</span></div>
+          <div class="badge-c"><span class="m">🎓</span><span><b>B.Sc. Computer Science</b>Barkatullah University, India</span></div>
+        </div>
         <div class="cred-note">Languages: English (fluent) · Hindi (fluent) · German (basic)</div>
       </div>
     </div>

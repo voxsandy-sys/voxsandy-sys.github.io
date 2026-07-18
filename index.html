@@ -226,6 +226,30 @@
   .ai-tile h3::before{content:"◆";color:var(--green);font-size:.7rem}
   .ai-tile p{font-size:.87rem;color:var(--ink-soft)}
 
+  /* ---------- Architecture diagram ---------- */
+  .arch{margin-top:48px;background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:30px 28px}
+  .arch-title{font-size:1.05rem;margin-bottom:22px;letter-spacing:-.01em}
+  .arch-note{margin-top:18px;font-size:.87rem;color:var(--ink-faint);font-style:italic}
+
+  /* ---------- Current focus ---------- */
+  .focus-strip{
+    margin-top:26px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+    background:rgba(0,196,140,.06);border:1px solid rgba(0,196,140,.25);
+    border-radius:var(--radius);padding:18px 22px;
+  }
+  .focus-strip .fs-label{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green);white-space:nowrap}
+
+  /* ---------- Scroll progress + back to top ---------- */
+  #progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--grad);z-index:60}
+  #toTop{
+    position:fixed;right:22px;bottom:22px;z-index:55;width:46px;height:46px;border-radius:50%;
+    background:var(--panel-2);border:1px solid var(--line);color:var(--cyan);font-size:1.2rem;cursor:pointer;
+    opacity:0;pointer-events:none;transition:opacity .3s;box-shadow:0 10px 30px rgba(4,10,20,.5);
+  }
+  #toTop.show{opacity:1;pointer-events:auto}
+  nav a.active{color:var(--cyan)}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:4px}
+
   /* ---------- Project cards ---------- */
   .proj-role{font-size:.76rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan);margin-bottom:8px}
   .card .chip-row{margin-top:14px}
@@ -269,6 +293,7 @@
 </head>
 <body>
 
+<div id="progress"></div>
 <header>
   <div class="wrap nav">
     <a class="logo" href="#top">Santosh<span>Sharma</span></a>
@@ -435,6 +460,77 @@
         <p>AI only pays off when people adopt it. I pair every AI roadmap with change readiness and value realization tracking.</p>
       </div>
     </div>
+
+    <div class="arch reveal">
+      <h3 class="arch-title">Reference architecture — AI-enabled HR on the SAP stack</h3>
+      <svg viewBox="0 0 920 470" role="img" aria-label="Layered reference architecture: employee experience, SuccessFactors core, integration, platform, and AI layers" style="width:100%;height:auto;display:block">
+        <defs>
+          <linearGradient id="ag" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#2f9dff"/><stop offset="1" stop-color="#38d6f5"/>
+          </linearGradient>
+          <marker id="arr" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0 0L8 4L0 8z" fill="#38d6f5"/>
+          </marker>
+        </defs>
+        <style>
+          .lay{fill:#121e33;stroke:#22314d;rx:12}
+          .lay-t{fill:#eaf1fb;font:700 15px sans-serif}
+          .lay-s{fill:#6d7f99;font:600 10.5px sans-serif;letter-spacing:.08em}
+          .box{fill:#16233c;stroke:#2b3d5e;rx:8}
+          .box-t{fill:#a7b6cc;font:600 12px sans-serif;text-anchor:middle}
+          .flow{stroke:#38d6f5;stroke-width:1.6;fill:none;marker-end:url(#arr);opacity:.85}
+        </style>
+        <!-- Layer 1: Experience -->
+        <rect class="lay" x="10" y="10" width="900" height="76" rx="12"/>
+        <text class="lay-s" x="30" y="34">EXPERIENCE LAYER</text>
+        <text class="lay-t" x="30" y="56">Employee &amp; Manager Experience</text>
+        <rect class="box" x="420" y="26" width="140" height="44" rx="8"/><text class="box-t" x="490" y="52">ESS / MSS</text>
+        <rect class="box" x="575" y="26" width="150" height="44" rx="8"/><text class="box-t" x="650" y="52">Joule Assistant</text>
+        <rect class="box" x="740" y="26" width="150" height="44" rx="8"/><text class="box-t" x="815" y="52">Mobile &amp; Portal</text>
+        <!-- Layer 2: HR Core -->
+        <rect class="lay" x="10" y="106" width="900" height="76" rx="12"/>
+        <text class="lay-s" x="30" y="130">DIGITAL HR CORE</text>
+        <text class="lay-t" x="30" y="152">SAP SuccessFactors</text>
+        <rect class="box" x="330" y="122" width="130" height="44" rx="8"/><text class="box-t" x="395" y="148">Employee Central</text>
+        <rect class="box" x="475" y="122" width="110" height="44" rx="8"/><text class="box-t" x="530" y="148">EC Payroll</text>
+        <rect class="box" x="600" y="122" width="90" height="44" rx="8"/><text class="box-t" x="645" y="148">Time</text>
+        <rect class="box" x="705" y="122" width="90" height="44" rx="8"/><text class="box-t" x="750" y="148">Comp</text>
+        <rect class="box" x="810" y="122" width="80" height="44" rx="8"/><text class="box-t" x="850" y="148">Analytics</text>
+        <!-- Layer 3: Integration -->
+        <rect class="lay" x="10" y="202" width="900" height="76" rx="12"/>
+        <text class="lay-s" x="30" y="226">INTEGRATION LAYER</text>
+        <text class="lay-t" x="30" y="248">SAP Integration Suite</text>
+        <rect class="box" x="420" y="218" width="120" height="44" rx="8"/><text class="box-t" x="480" y="244">CPI Flows</text>
+        <rect class="box" x="555" y="218" width="130" height="44" rx="8"/><text class="box-t" x="620" y="244">OData APIs</text>
+        <rect class="box" x="700" y="218" width="190" height="44" rx="8"/><text class="box-t" x="795" y="244">3rd-Party Payroll &amp; Apps</text>
+        <!-- Layer 4: Platform -->
+        <rect class="lay" x="10" y="298" width="900" height="76" rx="12"/>
+        <text class="lay-s" x="30" y="322">PLATFORM LAYER</text>
+        <text class="lay-t" x="30" y="344">SAP Business Technology Platform</text>
+        <rect class="box" x="420" y="314" width="120" height="44" rx="8"/><text class="box-t" x="480" y="340">SAP Build</text>
+        <rect class="box" x="555" y="314" width="130" height="44" rx="8"/><text class="box-t" x="620" y="340">Extensions</text>
+        <rect class="box" x="700" y="314" width="190" height="44" rx="8"/><text class="box-t" x="795" y="340">Business Data Cloud</text>
+        <!-- Layer 5: AI -->
+        <rect x="10" y="394" width="900" height="66" rx="12" fill="#0f2b33" stroke="url(#ag)"/>
+        <text class="lay-s" x="30" y="418" fill="#38d6f5">AI LAYER</text>
+        <text class="lay-t" x="30" y="440">SAP Business AI</text>
+        <rect class="box" x="420" y="405" width="120" height="42" rx="8"/><text class="box-t" x="480" y="430">Joule</text>
+        <rect class="box" x="555" y="405" width="130" height="42" rx="8"/><text class="box-t" x="620" y="430">AI Agents</text>
+        <rect class="box" x="700" y="405" width="190" height="42" rx="8"/><text class="box-t" x="795" y="430">Responsible AI Governance</text>
+        <!-- Flows -->
+        <path class="flow" d="M180 86v20"/><path class="flow" d="M180 182v20"/><path class="flow" d="M180 278v20"/><path class="flow" d="M180 374v20"/>
+      </svg>
+      <p class="arch-note">A typical target-state landscape I design against — the HR core stays clean while integration, extensions, and AI capability compose around it.</p>
+    </div>
+
+    <div class="focus-strip reveal">
+      <span class="fs-label">Currently exploring</span>
+      <span class="chip">SAP Joule Studio</span>
+      <span class="chip">Agentic AI</span>
+      <span class="chip">SAP Business Data Cloud</span>
+      <span class="chip">SAP Build</span>
+      <span class="chip">Multi-agent HR automation</span>
+    </div>
   </div>
 </section>
 
@@ -569,6 +665,8 @@
   </div>
 </footer>
 
+<button id="toTop" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
 <script>
   const io = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target);} });
@@ -576,6 +674,25 @@
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
   document.querySelectorAll('#menu a').forEach(a=>
     a.addEventListener('click',()=>document.getElementById('menu').classList.remove('open')));
+
+  // Scroll progress + back-to-top
+  const bar = document.getElementById('progress'), toTop = document.getElementById('toTop');
+  addEventListener('scroll', ()=>{
+    const h = document.documentElement;
+    bar.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
+    toTop.classList.toggle('show', h.scrollTop > 600);
+  }, {passive:true});
+
+  // Active nav highlight
+  const links = [...document.querySelectorAll('#menu a[href^="#"]')].filter(a=>a.getAttribute('href').length>1);
+  const secIO = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        links.forEach(a=>a.classList.toggle('active', a.getAttribute('href') === '#'+e.target.id));
+      }
+    });
+  },{rootMargin:'-45% 0px -50% 0px'});
+  links.forEach(a=>{ const s = document.querySelector(a.getAttribute('href')); if(s) secIO.observe(s); });
 </script>
 </body>
 </html>

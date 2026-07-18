@@ -242,6 +242,17 @@
   .fs-intro{font-size:.92rem;color:var(--ink-soft);margin:8px 0 12px}
   .disclaimer{margin-top:26px;font-size:.85rem;color:var(--ink-faint);font-style:italic;max-width:780px}
 
+  .vision-lead{color:var(--ink-soft);max-width:720px;font-size:1.05rem;font-weight:500}
+  .flow-bar{
+    margin-top:30px;display:flex;align-items:center;flex-wrap:wrap;gap:8px;
+    background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:16px 20px;
+  }
+  .flow-item{font-size:.82rem;font-weight:600;color:var(--ink-soft);background:var(--panel-2);border:1px solid var(--line);border-radius:8px;padding:6px 11px;white-space:nowrap}
+  .flow-item.hl{color:#04101f;background:var(--grad);border:none;font-weight:700}
+  .flow-arrow{color:var(--cyan);font-weight:700}
+  .cap-label{font-size:.72rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-faint);margin-top:14px}
+  .card .cap-label + ul{margin-top:8px}
+
   /* ---------- Thought leadership ---------- */
   .tl-row{display:grid;grid-template-columns:220px 1fr;gap:36px;margin-top:40px;align-items:start}
   .tl-stat{
@@ -560,13 +571,24 @@
 
 <section class="alt" id="vision">
   <div class="wrap">
-    <div class="kicker">Enterprise HR AI Vision</div>
-    <h2>Building the future of intelligent HR.</h2>
-    <p class="lede">I believe the next generation of HR platforms will combine SAP SuccessFactors, SAP Business AI, SAP BTP, and trusted enterprise data to deliver intelligent, human-centred experiences. The concepts below are architectural solution patterns and strategic ideas that demonstrate my approach to enterprise HR transformation — not client implementations or proprietary solutions.</p>
+    <div class="kicker">Enterprise AI Strategy &amp; Vision</div>
+    <h2>Designing trusted, scalable, human-centred HR ecosystems.</h2>
+    <p class="vision-lead">Powered by SAP Business AI, enterprise architecture, and responsible innovation — I believe the next generation of HR platforms will combine SAP SuccessFactors, SAP BTP, and trusted enterprise data to deliver intelligent, human-centred experiences.</p>
+    <p class="disclaimer" style="margin-top:14px">The concepts below represent architectural thinking and enterprise solution patterns based on publicly available SAP capabilities and industry best practices. They are intended to demonstrate my approach to HR transformation and do not represent client implementations or confidential intellectual property.</p>
+    <div class="flow-bar reveal">
+      <span class="flow-item">Business Strategy</span><span class="flow-arrow">→</span>
+      <span class="flow-item">SAP SuccessFactors</span><span class="flow-arrow">→</span>
+      <span class="flow-item">Integration Suite</span><span class="flow-arrow">→</span>
+      <span class="flow-item">SAP BTP</span><span class="flow-arrow">→</span>
+      <span class="flow-item">SAP Business AI + Joule</span><span class="flow-arrow">→</span>
+      <span class="flow-item">Governed Enterprise Data</span><span class="flow-arrow">→</span>
+      <span class="flow-item hl">AI-assisted HR Experiences</span>
+    </div>
     <div class="cards">
       <div class="card reveal">
         <h3>Intelligent Employee Experience</h3>
         <p>Conversational experiences that help employees navigate HR processes quickly while keeping humans in control of important decisions.</p>
+        <div class="cap-label">Representative use cases</div>
         <ul>
           <li>HR policy guidance</li>
           <li>Leave and benefits assistance</li>
@@ -577,6 +599,7 @@
       <div class="card reveal">
         <h3>Intelligent HR Operations</h3>
         <p>Enabling HR teams to identify operational risks and data-quality issues before they impact business processes.</p>
+        <div class="cap-label">Representative use cases</div>
         <ul>
           <li>Workflow monitoring</li>
           <li>Data quality insights</li>
@@ -587,6 +610,7 @@
       <div class="card reveal">
         <h3>Intelligent Payroll Readiness</h3>
         <p>Improving payroll quality by validating HR and payroll information before payroll execution.</p>
+        <div class="cap-label">Representative use cases</div>
         <ul>
           <li>Payroll data validation</li>
           <li>Missing information detection</li>
@@ -597,6 +621,7 @@
       <div class="card reveal">
         <h3>Intelligent Talent Experience</h3>
         <p>Supporting employees and managers with AI-assisted career growth and workforce planning.</p>
+        <div class="cap-label">Representative use cases</div>
         <ul>
           <li>Skills insights</li>
           <li>Learning recommendations</li>
@@ -607,6 +632,7 @@
       <div class="card reveal">
         <h3>Intelligent Workforce Insights</h3>
         <p>Transforming workforce data into meaningful business insights that support better decision-making.</p>
+        <div class="cap-label">Representative use cases</div>
         <ul>
           <li>Workforce trends &amp; organisation insights</li>
           <li>Attrition indicators</li>
@@ -617,6 +643,7 @@
       <div class="card reveal">
         <h3>Enterprise Architecture Principles</h3>
         <p>Every solution pattern above is designed around the same foundations:</p>
+        <div class="cap-label">Design foundations</div>
         <ul>
           <li>Business value before technology</li>
           <li>Human oversight for critical HR decisions</li>
